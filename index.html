@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Perceptual Hashing!</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -34,10 +34,12 @@
 				<section data-markdown>
 					<textarea data-template>
 					* Maybe no
+
+					[A Movie](https://ia801308.us.archive.org/22/items/SMA1836/SMA_1836.ogv)
 					</textarea>
 				</section>
 
-				<section>
+				<section data-background-video="https://ia801308.us.archive.org/22/items/SMA1836/SMA_1836.ogv" data-background-video-loop data-background-video-muted>
 					<pre><code data-trim data-noescape>
 					ffmpeg -f lavfi -i "sine=400" -c:a pcm_s24le -ar 96k -t \
 					10 out.wav 
