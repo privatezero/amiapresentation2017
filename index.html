@@ -24,8 +24,25 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					<textarea data-template>
+					# Is this Markdown
+					* Maybe yes
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+					* Maybe no
+					</textarea>
+				</section>
+
+				<section>
+					<pre><code data-trim data-noescape>
+					ffmpeg -f lavfi -i "sine=400" -c:a pcm_s24le -ar 96k -t \
+					10 out.wav 
+					</code></pre>
+				</section>
 			</div>
 		</div>
 
