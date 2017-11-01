@@ -34,16 +34,15 @@
 
 				<section data-markdown>
 					<textarea data-template>
-					* Maybe no
-
-					[A Movie](https://ia801308.us.archive.org/22/items/SMA1836/SMA_1836.ogv)
+					#### What is perceptual hashing??
 					</textarea>
 				</section>
 
 				<section data-background-video="Resources/test.ogv" data-background-video-loop data-background-video-muted>
 					<pre><code data-trim data-noescape>
-					ffmpeg -f lavfi -i "sine=400" -c:a pcm_s24le -ar 96k -t \
-					10 out.wav 
+					ffmpeg -i https://archive.org/download/SMA_524/SMA_5153.mp4 \
+					-i '/home/weaver/Repositories/amiapresentation2017/Resources/test.ogv' \
+					-filter_complex signature=detectmode=full:nb_inputs=2 -f null -
 					</code></pre>
 				</section>
 
