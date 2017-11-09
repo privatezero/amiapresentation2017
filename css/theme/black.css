@@ -36,6 +36,8 @@ body {
   font-weight: inherit; }
 div.contrast {
   background-color: #008B8B; }
+div.citation {
+  font-size: 0.3em; }
 /*********************************************
  * HEADERS
  *********************************************/
