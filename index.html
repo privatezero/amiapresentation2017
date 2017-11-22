@@ -66,7 +66,7 @@
 
 				<section data-markdown>
 					<textarea data-template>
-					#### Audio Hashing using Chromaprint
+					#### Audio Hashing using Chromaprint (and [pyacoustid](https://pypi.python.org/pypi/pyacoustid))
 					</textarea>
 				</section>
 
@@ -74,6 +74,13 @@
 					<textarea data-template>
 					Converts all inputs to a sample rate of 11025 Hz before generating representations of the content in musical notes via frequency analysis which are used to create the final fingerprint.
 					</textarea>
+				</section>
+
+				<section>
+					<div class="citation">
+					<p>https://oxygene.sk/2011/01/how-does-chromaprint-work</p>
+					</div>
+					<img src="Resources/chromaprint.png" alt="Chromaprint example" width=40% height=40%>
 				</section>
 
 				<section data-markdown>
@@ -84,7 +91,7 @@
 
 				<section data-markdown>
 					<textarea data-template>
-					generating global fingerprints per frame with both original and square aspect ratios as well as several sub-fingerprints.
+					Generates global fingerprints per frame with both original and square aspect ratios as well as several sub-fingerprints. Also creates 'rough fingerprints' representing 90 frame segments (with 45 frame overlaps). 
 					</textarea>
 				</section>
 
@@ -110,6 +117,22 @@
 				<section data-markdown>
 					<textarea data-template>
 					#### Experimental application at CUNY-TV
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+					* Create Fingerprints
+					
+					[Bash script](https://github.com/mediamicroservices/mm/blob/master/makefingerprint) controlling FFmpeg
+
+					* Store Fingerprints
+					
+					[Bash functions](https://github.com/mediamicroservices/mm/blob/master/mmfunctions#L108) parsing XML output of fingerprints to DB/Adding to AIPs
+
+					* Query Fingerprints
+					
+					[Bash script](https://github.com/mediamicroservices/mm/blob/master/searchfingerprint) controlling FFmpeg and FFplay to generate/compare fingerprint/time stamp against stored fingerprints and display video of matches.
 					</textarea>
 				</section>
 
