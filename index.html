@@ -72,7 +72,7 @@
 
 				<section data-markdown>
 					<textarea data-template>
-					Converts all inputs to a sample rate of 11025 Hz before generating representations of the content in musical notes via frequency analysis which are used to create the final fingerprint.
+					Chromaprint Library: Converts audio input to a sample rate of 11025 Hz before generating representations of the content in musical notes (ignoring octave) via frequency analysis which are THEN subjected to a series of filters which create the final fingerprint.
 					</textarea>
 				</section>
 
@@ -85,15 +85,22 @@
 
 				<section data-markdown>
 					<textarea data-template>
-					#### Video hashing using MPEG-7 Standard (and FFmpeg)
+					#### Video hashing using MPEG-7 Standard (and [FFmpeg](https://avpres.net/FFmpeg/#ch1))
 					</textarea>
 				</section>
 
 				<section data-markdown>
 					<textarea data-template>
-					Generates global fingerprints per frame with both original and square aspect ratios as well as several sub-fingerprints. Also creates 'rough fingerprints' representing 90 frame segments (with 45 frame overlaps). 
+					Down converts each frame to 32x32 8 bit images and extracts series of averages and differences of the luma content for subsections of new frames. Elements of these frame signatures are then plotted on a histogram in 90 frame chunks, which is then 'binarized' to create rough signatures.
 					</textarea>
 				</section>
+
+                <section>
+                    <div class="citation">
+                    <p>Chiariglione, L. (2012). The MPEG representation of digital media. (pp. 88). New York, NY: Springer.</p>
+                    </div>
+                    <img src="Resources/lumafingerprint.png" alt="Video hash sampling" width=40% height=40%>
+                </section>
 
 				<section data-background-iframe="https://archive.org/details/SMA_524" data-background-interactive>
 					<div class="contrast">
@@ -136,6 +143,7 @@
 					</textarea>
 				</section>
 				<section>
+                    <p>Each ninety frame 'Rough Signature' consisting of five 'BagOfWords' sections stored in database corresponding in/out frame numbers.
 					<pre><code data-trim>
 					<BagOfWords>0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  1  0  0  0  0  1  0  0  0  0  0  0  0  0  0 </BagOfWords>
 					</code></pre>
