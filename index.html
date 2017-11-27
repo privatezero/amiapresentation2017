@@ -72,7 +72,10 @@
 
 				<section data-markdown>
 					<textarea data-template>
-					Chromaprint Library: Converts audio input to a sample rate of 11025 Hz before generating representations of the content in musical notes (ignoring octave) via frequency analysis which are THEN subjected to a series of filters which create the final fingerprint.
+					### Chromaprint Library
+					Converts audio input to a sample rate of 11025 Hz before generating representations of the content in musical notes (ignoring octave) via frequency analysis
+					
+					Results subjected to a series of filters measuring contrasts between sub-areas which create the final fingerprint.
 					</textarea>
 				</section>
 
@@ -91,7 +94,9 @@
 
 				<section data-markdown>
 					<textarea data-template>
-					Down converts each frame to 32x32 8 bit images and extracts series of averages and differences of the luma content for subsections of new frames. Elements of these frame signatures are then plotted on a histogram in 90 frame chunks, which is then 'binarized' to create rough signatures.
+					Process down converts each frame to 32x32 8 bit images and extracts series of averages and differences of the luma content for subsections of new frames.
+					
+					Elements of these frame signatures are then plotted on a histogram in ninety frame chunks, which is then 'binarized' to create rough signatures.
 					</textarea>
 				</section>
 
@@ -99,7 +104,7 @@
                     <div class="citation">
                     <p>Chiariglione, L. (2012). The MPEG representation of digital media. (pp. 88). New York, NY: Springer.</p>
                     </div>
-                    <img src="Resources/lumafingerprint.png" alt="Video hash sampling" width=40% height=40%>
+                    <img src="Resources/lumafingerprint.png" alt="Video hash sampling" width=60% height=60%>
                 </section>
 
 				<section data-background-iframe="https://archive.org/details/SMA_524" data-background-interactive>
@@ -149,6 +154,13 @@
 					</code></pre>
 				</section>
 
+                <section data-markdown>
+                    <textarea data-template>
+                        ## Query Process
+                        Generate fingerprint for input -> Parse fingerprint for 'rough fingerprints' -> Query database for 'rough fingerprints' (using exact matching) -> Find in/out frames for matching fingerprints -> Parse in/out into 500 frame segments -> Generate preview from input file using time stamps for matching hashes
+                    </textarea>
+                </section>
+
 				<section>
 				<pre><code data-trim data-noescape>searchfingerprint -i 70 -o 85 ~/Desktop/temple.mp4</code></pre>
 				<img src="Resources/results.gif" alt="Eddie Vedder results">
@@ -169,8 +181,10 @@
 					* [MPEG Representation of Digital Media](http://www.worldcat.org/oclc/902763394)
 					* [How Does Chromaprint Work?](https://oxygene.sk/2011/01/how-does-chromaprint-work/)
 					* [Adventures in Perceptual Hashing](https://privatezero.github.io/weaverblog/2017/04/18/Adventures-in-perceptual-hashing.html)
+					* [ffmprovisr](https://amiaopensource.github.io/ffmprovisr)
 					#### Tools
 					* [AccoustID](https://acoustid.org/)
+					* [pyacoustid](https://pypi.python.org/pypi/pyacoustid)
 					* [FFmpeg](https://www.ffmpeg.org/)
 
 					</textarea>
