@@ -159,22 +159,28 @@
 					* Query Fingerprints
 					
 					[Bash script](https://github.com/mediamicroservices/mm/blob/master/searchfingerprint) controlling FFmpeg and FFplay to generate/compare fingerprint/time stamp against stored fingerprints and display video of matches.
+
+					Note:
+					Added 'makefingerprint' microservice as part of ingest. Ran at approx. 3x speed on MPEG-2 broadcast files.
 					</textarea>
-					<aside class="notes">
-						Added 'makefingerprint' microservice as part of ingest. Ran at approx. 3x speed on MPEG-2 broadcast files.
-					</aside>
 				</section>
 				<section>
                     <p>Each ninety frame 'Rough Signature' consisting of five 'BagOfWords' sections stored in database corresponding in/out frame numbers.
 					<pre><code data-trim>
 					<BagOfWords>0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  1  0  0  0  0  1  0  0  0  0  0  0  0  0  0 </BagOfWords>
 					</code></pre>
+					<aside class="notes">
+					Decided to store only 'five elements of rough fingerprint'
+					</aside>
 				</section>
 
                 <section data-markdown>
                     <textarea data-template>
                         ## Query Process
                         Generate fingerprint for input -> Parse fingerprint for 'rough fingerprints' -> Query database for 'rough fingerprints' (using exact matching) -> Find in/out frames for matching fingerprints -> Parse in/out into 500 frame segments -> Generate preview from input file using time stamps for matching hashes
+
+                        Note:
+                        Query using exact matching (rather than Hamming Distance) for simplicity, and because ballpark was good enough for purposes
                     </textarea>
                 </section>
 
@@ -184,6 +190,9 @@
 				<div class=citation>
 				<p>Sample footage copyright Temple of the Dog/A&amp;M Records</p>
 				</div>
+				<aside class="notes">
+				Yeaaaaaaaarrhhhhhh
+				</aside>
 				</section>
 
 				 <section>
