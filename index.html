@@ -68,6 +68,9 @@
 					* Quickly discover duplicates and derivative files
 					* Potential Patron access point
 					* Automated discovery of relationships between records
+
+					Note:
+					Another form of potentially powerful future proofing!
 					</textarea>
 				</section>
 
@@ -90,6 +93,9 @@
 					Converts audio input to a sample rate of 11025 Hz before generating representations of the content in musical notes (ignoring octave) via frequency analysis.
 					
 					Results subjected to a series of filters measuring contrasts between sub-areas which create the final fingerprint.
+
+					Note:
+					This measuring of contrasts similar to MPEG-7 standard - will talk more later!
 					</textarea>
 				</section>
 
@@ -98,6 +104,9 @@
 					<p>https://oxygene.sk/2011/01/how-does-chromaprint-work</p>
 					</div>
 					<img src="Resources/chromaprint.png" alt="Chromaprint example" width=40% height=40%>
+					<aside class="notes">
+					Online actoustid database reliant on length of audio as well as fingerprint for ID, so not robust to partial files. BUT open source and locally hostable - presumably changes could be made!
+					</aside>
 				</section>
 
 				<section data-markdown>
@@ -170,7 +179,7 @@
 					<BagOfWords>0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  1  0  0  0  0  1  0  0  0  0  0  0  0  0  0 </BagOfWords>
 					</code></pre>
 					<aside class="notes">
-					Decided to store only 'five elements of rough fingerprint'
+					Decided to store only five elements (bags of words) of rough fingerprint as frame level accuracy not needed. 90 frame segments with 45 frames of overlap was close enough for us!
 					</aside>
 				</section>
 
@@ -192,6 +201,8 @@
 				</div>
 				<aside class="notes">
 				Yeaaaaaaaarrhhhhhh
+
+				Found both record for original file and transcoded ogg vorbis
 				</aside>
 				</section>
 
@@ -202,6 +213,10 @@
 					<div class="citation">
 					<p>April - 1700 videos, 1.7 million fingerprints. November - 3177 videos, 3.4 million fingerprints. No appreciable difference in generation/search time of around 30 seconds.</p>
 					</div>
+					<aside class="notes">
+					Recent query tested using transcoded lossy download from youtube.
+					Almost all of that time is for generating the fingerprint - actual DB query in matter of seconds due to indexing on ingest.
+					</aside>
 				</section>
 
 				<section data-background-iframe="https://amiaopensource.github.io/ffmprovisr/#generate_video_fingerprint" data-background-interactive>
