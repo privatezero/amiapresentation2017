@@ -34,6 +34,12 @@
 
 				<section data-markdown>
 					<textarea data-template>
+					#### privatezero.github.io/amiapresentation2017
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
 					### What is perceptual hashing??
 					* Creates links between materials in the way a human would perceive them
 					* Kind of like fixity for content instead of file integrity
@@ -50,6 +56,9 @@
 				</div>
 				</div>
 				</div>
+				<aside class="notes">
+				1964- Beatlemania!
+				</aside>
 				</section>
 
 				<section data-background-image=Resources/cougcolor.png>
@@ -80,12 +89,17 @@
                     <textarea data-template>
                     #### Problem: How to make content machine readable?
                     ##### Answer: Transformations (lots of 'em!)
+                    Note:
+                    Will now talk about a couple examples for audio and video hashing
                     </textarea>
                 </section>
 
 				<section data-markdown>
 					<textarea data-template>
 					#### Audio Hashing using Chromaprint (and [pyacoustid](https://pypi.python.org/pypi/pyacoustid))
+
+					Note:
+					Audio hashing has a decent community around it - integrated into tools such as VLC for metadata tagging!
 					</textarea>
 				</section>
 
@@ -114,6 +128,8 @@
 				<section data-markdown>
 					<textarea data-template>
 					#### Video hashing using MPEG-7 Standard (and [FFmpeg](https://avpres.net/FFmpeg/#ch1))
+					Note:
+					This is a built in filter in FFmpeg now! Anyone with FFmpeg installed can now take advantage of this!
 					</textarea>
 				</section>
 
@@ -125,11 +141,24 @@
 					</textarea>
 				</section>
 
+				<section>
+					<div class="citation">
+					<p>https://en.wikipedia.org/wiki/Hamming_distance#/media/File:Hamming_distance_4_bit_binary.svg</p>
+					</div>
+					<img src="Resources/hamming.png" alt="Hamming Distance example" width=100% height=100%>
+					<aside class="notes">
+					Binarization of output allows comparison via 'Hamming Distance' - number of binary digits that would have to be changed to make strings identical.
+					</aside>
+				</section>
+
  				<section>
  					<div class="citation">
  					<p>Chiariglione, L. (2012). The MPEG representation of digital media. (pp. 88). New York, NY: Springer.</p>
  					</div>
 					<img src="Resources/lumafingerprint.png" alt="Video hash sampling" width=60% height=60%>
+					<aside class="notes">
+					Example showing region of theoretical 32X32 pixel frame used for average luma value (left) and subregions used for calculating 'difference values' right
+					</aside>
 				</section>
 
 				<section data-background-iframe="https://archive.org/details/SMA_524" data-background-interactive>
@@ -144,11 +173,17 @@
 					-i 'https://privatezero.github.io/amiapresentation2017/Resources/ballard.ogv' \
 					-filter_complex signature=detectmode=full:nb_inputs=2 -f null -
 					</code></pre>
+					<aside class="notes">
+					Filter allows either direct analysis of inputs, or generation of a fingerprint file.
+					</aside>
 				</section>
 
 				<section>
 					<code>[Parsed_signature_0 @ 0x126cc00] matching of video 0 at 581.672567 and 1 at 1.668333, 295 frames matching
 [Parsed_signature_0 @ 0x126cc00] whole video matching</code>
+					<aside class="notes">
+					Right around 9:40
+					</aside>
 				</section>
 
 				<section data-markdown>
@@ -176,7 +211,7 @@
 					</textarea>
 				</section>
 				<section>
-                    <p>Each ninety frame 'Rough Signature' consisting of five 'BagOfWords' sections stored in database corresponding in/out frame numbers.
+                    <p>Each ninety frame 'Rough Signature' consisting of five 'BagOfWords' sections stored in database with corresponding in/out frame numbers.
 					<pre><code data-trim>
 					<BagOfWords>0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  1  0  0  0  0  1  0  0  0  0  0  0  0  0  0 </BagOfWords>
 					</code></pre>
@@ -225,6 +260,9 @@
 					<div class="contrast">
 						<pre><h3>https://amiaopensource.github.io/ffmprovisr</h3></pre>
 					</div>
+					<aside class="notes">
+					ffmprovisr spearheaded by inimitable Ashley Blewer!
+					</aside>
 				</section>
 
 				<section data-markdown>
