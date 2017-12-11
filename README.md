@@ -1,6 +1,9 @@
-# Presentation for AMIA 2017 by Andrew Weaver
+# Automation and Similarity: an Introduction to Perceptual Hashing
+## Presentation for AMIA 2017 by Andrew Weaver
 
-## Built in [reveal.js](https://github.com/hakimel/reveal.js/). To view, open index.html in a web browser.
+### Built in [reveal.js](https://github.com/hakimel/reveal.js/). To view, open index.html in a web browser.
+
+Currently viewable online at [http://privatezero.github.io/amiapresentation2017/](http://privatezero.github.io/amiapresentation2017/)
 
 For reveal.js license see LICENSE. Presentation content is licensed under the following Creative Commons license:
 
